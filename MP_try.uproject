@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{C1F9283A-4DC8-9CCF-3781-93A53B2CEE48}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "MP_try",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
