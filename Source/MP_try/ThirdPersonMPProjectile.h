@@ -10,11 +10,11 @@ UCLASS()
 class MP_TRY_API AThirdPersonMPProjectile : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AThirdPersonMPProjectile();
-	
+
 	// Sphere component used to test collision.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
 	class USphereComponent* SphereComponent;
@@ -43,8 +43,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+	virtual void Destroyed() override;
+
+	UFUNCTION(Category="Projectile")
+	void OnProjectileImpact(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	                        FVector NormalImpulse, const FHitResult& Hit);
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 };
